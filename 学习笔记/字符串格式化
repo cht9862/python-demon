@@ -1,0 +1,16 @@
+一、字符串格式化
+    %
+        %s  ：字符串占位符
+            print('hello %s'%('word'))   #将%()中的内容替换到%s里面去,可以多添加几个%s 但必须%()数量对应上 
+            print('hello %s,%s'%('word','chen'))
+        %d  : 时间整数占位符
+            print('Im %d year old'%(3))
+        %f  : 小数展位符，如果不加小数位限定默认6位小数位
+            print('Im %.3f year old'%(16))
+            print('Im %f year old'%(16))     #这是不加小数位的限定
+
+    format  :与%s 方法相同，注意format 前面有个 “.”
+        print('hello {}'.format('chen'))  
+        print('hello {} {}'.format('chen','Hao'))    # 多个占位
+        print('hello {1} {0}'.format('chen','Hao'))   #  可以通过指定位置 01234 排列 ，此结果得出hello Hao chen
+        print('hello my {name} im {age} year old'.format(name='Chenhaotian',age=12))    # 可以通过占位标签，获取值，此结果得出 hello my Chenhaotian im 12 year old

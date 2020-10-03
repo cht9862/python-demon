@@ -1,0 +1,40 @@
+一、字典的基本操作
+    
+
+    a=dict(                             # 创建一个字典 
+        chen='haotian',
+        zhang='xiaoping'
+    )
+    
+    a={                                 #另一种方法创建字典
+        'chen':'haotian',
+        'zhang':'xiaoping'
+    }
+
+    print(a['chen'])
+
+
+    a['chen']='haonan'                  #通过键修改对应value
+
+
+    a['yang']='haonan'                  #若字典中没有这个键，则会在最后面添加
+
+
+    del(a['chen'])                      #删除字典中的键和值
+
+    s=a.pop('chen')                     #删除字典中chen 键的值，并会返回删除的键
+
+
+    a.popitem()                         #随机删除字典中的一个键和值。
+
+
+
+二、字典的标准方法
+
+    dict_name.copy()                        #复制整个字典
+    dict_name.get('key','提示')             #获取指定键的值,若没有默认返回值为None，可以自行添加提示，注意没有不会报错
+    dict_name.items()                       #字典迭代器，将所有字典内容依次输出出来
+    dict_name.keys()                        #字典迭代器，将字典中所有的key依次输出出来
+    dict_name.values()                      #字典迭代器，将字典中所有的value依次输出出来
+    dict_name.update({'key':'values'})      #把指定内容更新到字典中，若是字典中没有该key ，会在尾部添加一个
+    dict_name.setdefault('a',10)            #添加一个键值对到字典中，若已有则不会生效。

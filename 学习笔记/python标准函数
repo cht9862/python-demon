@@ -1,0 +1,29 @@
+内容：（python 自带的一些标准函数使用及功能）
+
+
+    print 打印输出内容到屏幕
+        print('hello')
+        参数：
+            value： print（value,value,value） 多个value
+            sep ： print(value,value,sep='')   每个value之间都以空格默认分隔，自定义分隔
+            end :  print(value,sep='',end='')  指定结尾的符号
+
+
+
+    运算符：
+        +   ：  数值相加
+        -   ：  数值减少
+        *   :   数值相乘
+        /   ：  数值相除    
+        //  ：  数值整除    
+        %   ：  数值取余
+        
+    math 数学函数    
+        round : 四舍五入   round(8.91,1)    表示保留小数点后的一位，结果表示为8.9
+        abs ：  绝对值取整  abs(-1)     结果表示为1
+        import math
+
+            math.ceil ： 向上取整   math.ceil（1.1）   大于1不等于2 ，结果表示为2，向上取整数
+            math.floor ： 向下取整  math.floor(1.1)    大于1不等于2, 结果表示为1，向下取整数
+            math.trunc  : 截取整数  math.trunc(1.4)    不保留小数位，结果为1
+            math.pow  : 幂运算  math.pow(1,4)          1的4次方，结果为4
