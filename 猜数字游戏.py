@@ -21,11 +21,16 @@ def fn():
 print(type(fn))
 fn()
 #定义一个函数，可以用来求任意两个数的和
-def sumb(a,argument=3):
+def sumb(a1,a2,argument=3):
     # Number_a=int(input('请输入第一个数字'))
-    Number_b=int(input('请输入第二个数字'))
-    print(argument+Number_b+a)
+    # Number_b=int(input('请输入第二个数字'))
+    # print(argument+Number_b+a)
+    print(a1)
+    print(a2)
+    print(argument)
 
-sumb(2)
+sumb(a2=3,a1=2)
 
-
+a=[1,2,3,4]
+c=a.copy
+print(id(a),'\n',id(c))

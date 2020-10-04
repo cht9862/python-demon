@@ -23,3 +23,5 @@
     list_name.remove('abc')         #通过指定元素abc删除列表中的abc，若不存abc这个值在则报错，若有多个abc只删除第一个
     list_name.reverse()             # 将列表元素反方向排列，倒序
     list_name.sort()                #将列表中的成员排序
+    list_name.copy()                #复制列表中的内容
+    list_name.clear()              #清空列表中的内容
