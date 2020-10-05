@@ -1,0 +1,78 @@
+一、装饰器的使用
+    # 装饰器可以理解为，在原有的函数基础进行扩展
+        因为很多情景是无法修改函数或是不能去改函数
+        那么我们在原有的基础上需要加工能，只能进行扩展
+    
+
+    示例：
+        def fn():
+            print('hello')
+        
+
+
+        def fn1():
+            print('开始打印')
+            fn()
+            print('结束打印')     #这个函数就是基于fn扩展的 函数fn1()就是装饰器
+
+
+
+        def fn():
+            print('hello')
+
+
+        def fn2():
+            print('开始打印')
+            fn()
+            print('打印结束')
+
+        def bend(a):
+            def new_function():
+                print('开始打印')
+                a()
+                print('打印结束')
+            return new_function    
+        f1=bend(fn)
+        f2=bend(fn)
+        f1()                #这是通过函数调用自动创建一个函数
+
+
+
+        def number(a,b):
+            '''
+            求任意两个数的和
+            '''
+            return a+b
+
+        def fn2():
+            print('开始打印')
+            fn()
+            print('打印结束')
+
+        def bend(a):
+            def new_function(*ole,**keyole):      # 注意这里的*ole和**keyole 是用来将外部的参数装包
+                print('开始打印')
+                r = a(*ole,**keyole)            #注意这里的参数与上面的参数相反这是用来解包获取值的
+                print('打印结束')
+                return r
+            return new_function    
+        f1=bend(number)
+        r=f1(123,456)
+        print(r)               #这是通过函数调用自动创建一个能接受参数的函数
+
+        
+
+        当创建好上方的装饰器内容后，可以通过另一种方式调用，不用f1=bend()
+        @bend
+        def number(a,b):
+            '''
+            求任意两个数的和
+            '''
+            return a+b
+        
+        chen=number(123,456)
+        print(chen)
+        这就可以使用装饰器装饰number这个函数了，取代了上面的那种方式
+        可以为函数同时加多个装饰器
+        @
+        @

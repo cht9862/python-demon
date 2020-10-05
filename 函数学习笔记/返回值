@@ -1,0 +1,23 @@
+一、函数的返回值
+    return
+        将我们函数需要引用到外部的值返回出来，并可以用变量接收
+        注意return 一旦在函数中执行，那么return 的后面代码块将不会再继续执行
+        return 用来结束函数的执行，并不只是类似与break 的跳出循环
+
+    示例：
+        def name(*a):
+            print(a)
+            return a
+
+        a=name()
+    
+    返回值也可以是一个函数,返回函数中的函数
+    示例：
+        def name(*a):
+            print(a)
+            def name1()
+                print('hello')
+            return name1
+
+        a=name()
+

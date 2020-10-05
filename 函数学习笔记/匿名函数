@@ -1,0 +1,28 @@
+一、 匿名函数
+    lambda 函数表达式
+    lambda 参数列表：返回值
+
+
+    def fn(a,b):
+        return a+b
+    
+
+    lambda a,b: a+b       # 此处与上方的def 函数等价的，简单定义一个匿名函数
+                          # 之所以是匿名函数，就是这lambda 没有名字调用需要赋值在调用
+    
+    l=[1,2,3,4,5,6,7,8,9]
+    fi=filter(lambda i: i%3 ==0,l)
+
+    ne=lambda i: i % 3 == 0 ;print(ne(13.5))   #可以通过一句话将函数和打印拼劲，灵活运用
+
+
+    filter 函数的参数过滤使用的方法
+        l=[1,2,3,4,5,6,7,8,9]
+        fi=filter(lambda i: i%3 ==0,l)
+    map  函数的迭代使用的方法
+        l=[1,2,3,4,5,6,7,8,9]
+        fi=map(lambda i: i*3 ,l)
+
+    注意以上两种方法输出是要指定数据类型
+        print(tuple(fi))
+        print(list(fi))
