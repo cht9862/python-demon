@@ -1,0 +1,56 @@
+类的定义：
+    类和对象都是对现实生活中的实为或程序中的内容的抽象
+    实际上所有的事物都由两部分构成：
+        1.数据：（属性）
+            当全局变量读取类的属性时：如r=class.name   不要加括号
+        2.行为：（方法）
+            当全局变量读取类的行为是：如r=class.run()  run是一个函数需要加括
+            如果不加括号变量中得到的是一个函数不是函数返回的值,且需要在类的函数中return 返回值
+
+            在全局中类的赋值也是如此，r=class 这种情况下就是把r只想了class类同一个id ，r=class() 这种情况则是创建一个功能一模一样的类id 不同
+
+        
+
+在类中可以定义一些特殊方法（魔术方法）
+特殊方法都是以__开头__结尾的方法
+__init__用来初始化类,当保存类传入参数时并不会执行init，如：name('aa') 只有在通过基础的a=name(name='hello')创建时传入参数再调用class 类的时候才会触发init
+然后通过a.name 访问到hello    不能直接name(name='hello');print(name.name)  这种会提示 type object 'Dog' has no attribute 'name'
+
+        # 定义一个人类
+        class Pe():
+            def __init__(self,*a):      #魔术方法不用自己调用
+                self.name=a
+                print(self.name)
+            def Pe_run():
+                print('正在疯狂的奔跑~~~')
+
+            
+            
+        a=Pe('Chenhaotian')         #使用类创建一个类的时候，可以在父类的调用括号中传入参数这样init 就可以接收参数
+        print(type(a))
+
+
+
+    示例：
+        class Dog():
+            #name
+            #age
+            #gender
+            #height
+            def __init__(self,name,age,gender,height):
+                self.name=name
+                self.age=age
+                self.gender=gender
+                self.height=height
+            
+            def Dog_run():
+                print('Dog runing ~~~')
+            def Dog_jiao():
+                print('Dog speak ~~~~')
+
+
+        # Dog.Dog_run()
+        a=Dog('旺财',2,'母狗',180)
+        b=Dog('杰瑞',3,'母狗',134)
+        print(a.name,a.gender,a.age,a.height)
+        print(b.name,b.gender,b.age,b.height)

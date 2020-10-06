@@ -1,0 +1,38 @@
+封装：
+    将类中的属性名称隐藏，外部无法访问
+
+        如 : 在函数中的self.name 变成一个不常用的名称，就可以防止外部通过class.name修改
+        def __init__(self,name)
+            self.chen_name=name              # 这样就可以了
+
+
+    如何获取/修改（class）对象中的属性呢？
+        需要提供一个getter和setter 方法是外部可以访问属性
+        - 创建getter 函数命名格式（get_name)
+        - 创建setter 函数命名格式（set_name)
+
+        setter方法装饰器，@属性名.setter   # 通过装饰器调用方法外部就set_name不需要加() 就会返回值
+        getter方法装饰器 ，@property   # 通过装饰器调用方法外部就get_name不需要加() 就会返回值
+        # 两种装饰器就是为了让我们用属性的方式取执行方法
+
+        这中方法很好的空值了类中的值的权限
+
+        
+        def __init__(self,name,age,gender,height):
+            self.chen_name=name
+            #当外部不知道name属性的实际名称无法修改那么属性
+        
+        @property
+        def get_name(self):
+            print(self.chen_name)       #可以通过get_name函数获取属性name的值
+
+        @set_name.setter
+        def set_name(self,name):
+            self.chen_name=name         #通过self_name 函数修改属性name的值
+
+
+
+        __属性    这种属性属于隐藏属性，只能在本类中获取，全局下访问不到，一般应用于get_name函数中，只用与获取name的值
+        self.__name=name
+        这种方法就是python 解释器帮我们将属性名改成了_class__属性
+        通过_class__属性 也是可以访问到的，如：class._class__属性

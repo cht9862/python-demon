@@ -1,0 +1,71 @@
+文件的操作
+    input/output
+
+    操作文件的步骤：
+        1.打开文件
+        2.读写
+        3.关闭文件
+
+
+    file_name = 'C:/Users/Administrator/Desktop/python学习/python-demon/read.txt'
+    a=open(file_name)
+    a_read=a.read()
+    print(a_read)
+    a.close
+    # 上述代码从打开到读取再到关闭流程
+
+    
+    在读取一个大文件时
+        可以分行读取
+
+    with open(file_name) as a_read:         # 打开的file_name 会赋值给as 后面的名称直接通过后面的名称.read就可以了
+        # open(文件名,encoding=‘utf-8’)    打开文件时encoding默认=none 
+        print(a_read.read())                # read('括号中可以添加读取文本的字符长度')  可以通过len()获取长度
+        print(a_read.read())                # 在同一个文件读取 写几个就读取几次，并且每次都会接上次读取的位置继续读取
+        print(a_read.readline)              # 一行一行读取，有几个readline就读取几行
+        print(a_read.readlines)              # 一行一行读取，不用写多个一个就会把文件所有内容读取,但是注意的时返回的是列表形式，一行是一个字符串
+    # 在with 中打开文件，会在with 结束后自动关闭文件
+
+    
+    写文件：
+        当我们打开一个文件的时候默认是只读权限，
+    open(file_name,'r',buffering=-1,encoding=none,errors=none,newline=none,closefd=True,opener=none)
+
+    # 打开文件的权限有
+        # 'r' 只读权限
+        # 'w' 只写权限
+        # 'a' a是追加的权限，不会覆盖原先的值
+        # '+' 为操作符增加功能
+        # 'x' 用来在文件没有的情况下创建，如果已经有这个文件就报错
+        # 'r+'  即可读又可写
+        # 'a+'
+        # 'w+'
+        # 't'  打开的是文本文件（默认就是以这种方式打开）就相当于我们写了'rt'
+        # 'b'  打开的是二进制文件  
+
+
+        try:
+            with open(file_name,'w',encoding='utf-8') as a_read:    # 打开文件的权限有'r''w''a'     a是追加的权限，不会覆盖原先的值
+                # print(a_read.readlines())
+                # print(a_read.readline())
+                a_read.write('hello wordaaa')
+                a_read.writelines('美好的一天\n')                #通过write 写入会覆盖原有内容，并且写入多个默认不换行，需要在每一句后面加\n
+                r = a_read.write('chenhaotian')                 #write有返回值，他的返回值是写入字符的数量
+                                                                # 在同一次打开文件的多个写入动作不会覆盖，会追加
+                    # a_read.close
+                # print(a_read.read())
+        except Exception as 错误类型:
+            print('出错了~~~~~')
+
+
+
+    二进制文件：
+        在'rb'或是'wb' 任意模式加b
+    
+
+        a_read.seek(15) 用来设定我们读取文件时候从哪个位置开始读取
+            seek(10，1)可选参数有三个0，1，2 ，默认为0
+            seek(10，0)零的情况下就从开头读取10个字符
+            seek(10，1)一的情况下就是从当前的位置开始读取10个字符
+            seek(-10，1)二的情况下就是从结尾位置往前读取10个字符
+        a_read.tell() 用来获取当前文件读取到哪里

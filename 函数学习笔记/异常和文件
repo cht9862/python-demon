@@ -1,0 +1,39 @@
+异常处理：
+    程序在运行过程当中，不可避免的会出现一些错误
+    try：
+        代码块(备注：这是可能出现错误的代码)、
+    except 错误类型 as a：  # 将错误类型报错信息赋值给a ，print(a,type(a))就可以看到报错信息了，正常except不执行也不显示报错信息的      
+    # except 后面可以跟一个错误类型参数比如NameError，那么except 只会捕获该异常不会管其他异常
+    except：   
+    # except 可以写多个
+        代码块(备注：如果出现了错误我们该怎么处理)
+
+    finally:
+        代码块(无论是否出现异常这条都会执行)
+    else：
+        代码块(没出错执行语句)
+
+
+
+    错误类型：
+        except 后面加哪个错误类型，那么这个except 就只管哪个类型的错误
+        Excepthion：
+        NameError:
+        ZeroDivisionError:
+        IndexError:
+        TypeErrot:
+
+
+
+自定义异常对象：
+    可以使用raise 语句抛出异常
+        raise 错误类型('备注')
+
+
+    定义一个类：
+        class Myerror(Excepthion)
+            pass
+        
+
+        那么Myerror 就是我们自己定义的一个错误
+        

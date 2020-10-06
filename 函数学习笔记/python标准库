@@ -1,0 +1,46 @@
+标准库：
+    sys 模块：
+        里面提供了一些变量和含量，使我们可以获取到python 解析器的信息
+        或者通过函数来操作python 解析器
+
+
+        sys.argv   获取当前python执行程序所执行的模块列表[]
+        print(sys.argv)
+
+        sys.modules   获取当前程序中引入的所有模块，以字典方式返回
+
+        pprint()    该方法可以用来对打印的数据简单格式化
+
+        sys.path   获取当前系统的模块的环境变量搜索路径
+
+        sys.platform    获取程序当前运行在什么系统
+
+        sys.exit('退出提醒')     退出程序
+
+
+    os 模块：
+        让我们可以对操作系统进行使用
+
+
+        os.environ   获取到系统的环境变量
+
+        os.system('ipconfig')     可以直接在dos 里面执行命令
+
+
+        os.listdir()    查看当前程序存在的目录下的内容
+
+        os.chdir()    切换当前目录，默认实在执行程序的当前目录也就是'.'
+
+        os.getcwd()   获取当前所在的路径
+
+        os.mkdir()   创建目录
+
+        os.rmdir()      删除目录
+
+        os.rename('就名字','新名字')     重命名
+            #如果在新名字前加上绝对路径，可以实现剪切的功能
+
+        os.remove()    删除文件
+
+        
+
